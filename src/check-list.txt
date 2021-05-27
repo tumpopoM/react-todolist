@@ -1,0 +1,8 @@
+App ToDoList
+1. main div เซ็ต background
+2. center div (child ของ main div) container เซ็ตเซ็นเตอร์ น่าจะใช้ flex
+3. title
+4. input and button add สำหรับ add todo list
+5. show total
+6. clear all list
+7. delete todo list button ซ่อนแสดงตอน hover
