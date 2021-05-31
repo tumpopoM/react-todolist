@@ -11,7 +11,6 @@ import Total from './components/Total'
 function App() {
   const [tasks, setTasks] = useState([]) //['xxx','xxx'] = [<Item />, <Item />]
   const [inputText, setInputText] = useState('')
-  // const [isMouseInside, setIsMouseInside] = useState(false)
 
   const onChangeInput = useCallback((e) => {
     setInputText(e.target.value)
@@ -27,30 +26,17 @@ function App() {
   }, [inputText, tasks]) // [inputText, tasks] ถ้า key มีการเปลี่ยนแปลงถึงจะทำงาน
 
   const removeToDo = useCallback((id) => {
-    // console.log('Hey Delete It!: ', id);
     const data = [...tasks]
     let newData = data.filter((item, index) => {
       return index !== id;
     })
     setTasks(newData)
-    // console.log('newData: ', newData);
   }, [tasks])
 
   const clearAllToDo = useCallback((e) => {
     setTasks([])
-    // setInputText('')
   }, [])
 
-  // const mouseEnter = useCallback((e) => {
-  //   console.log('mouseEnter id: ', e.target.id);
-  //   setIsMouseInside(true)
-  //   console.log('mouseEnter: ', isMouseInside);
-  // }, [isMouseInside])
-  // const mouseLeave = useCallback((e) => {
-  //   console.log('mouseLeave id: ', e.target.id);
-  //   setIsMouseInside(false)
-  //   console.log('mouseLeave: ', isMouseInside);
-  // }, [isMouseInside])
 
   return (
     <Background>
@@ -61,7 +47,6 @@ function App() {
           {
             tasks.map((title, i) => (
               <Item title={title} id={i} key={i} onSelect={removeToDo} /> // key ควรเป็นอะไรที่ไม่ซ้ำอย่างเช่น id
-              // <Item title={title} id={i} key={i} onSelect={removeToDo} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} isMouseInside={isMouseInside}/> // key ควรเป็นอะไรที่ไม่ซ้ำอย่างเช่น id
             ))
           }
         </List>

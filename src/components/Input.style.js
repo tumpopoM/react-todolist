@@ -20,7 +20,6 @@ const Styles = {
     borderRadius: '20px',
     color: '#fff',
     backgroundColor: '#f39f86',
-    // backgroundImage: 'linear-gradient(315deg, #fce043 0%, #fb7ba2 74%)',
     border: 'none',
     cursor: 'pointer',
     display: 'flex',

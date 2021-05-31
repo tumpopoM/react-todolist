@@ -28,7 +28,6 @@ const Styles = {
   OverlayShow: {
     width: '10%',
     height: '100%',
-    // left: '10%',
     transition: '.5s ease',
     right: '0%',
     position: 'absolute',
