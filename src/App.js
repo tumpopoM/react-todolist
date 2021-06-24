@@ -12,11 +12,11 @@ function App() {
   const [tasks, setTasks] = useState([]) //['xxx','xxx'] = [<Item />, <Item />]
   const [inputText, setInputText] = useState('')
 
+  const countTasks = useMemo(() => tasks.length ? tasks.length : 'X', [tasks])
+
   const onChangeInput = useCallback((e) => {
     setInputText(e.target.value)
   }, [])
-
-  const countTasks = useMemo(() => tasks.length ? tasks.length : 'X', [tasks])
 
   const addToDo = useCallback((e) => {
     const data = [...tasks] // ...tasks คือการ clone ตัว tasks มาเพื่อทำอะไรสักอย่างกับตัวแปรนี้ก่อนเซตค่าใหม่กลับเข้าไป
